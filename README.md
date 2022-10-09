@@ -29,8 +29,8 @@
 * [Technologies](#🛠-technologies)
 * [Project](#🚀-project)
     * [Requirements](#requirements)
-    * [Implementation/Running]
-    * [Tests]
+    * [Implementation/Running](#runnig)
+    * [Tests](#tests)
 * [Licence](#📝-licence)
 
 ## 🛠 Technologies
@@ -44,6 +44,17 @@
 - Install the adicional libraries
 ```bash
 pip install -r requirements.txt
+```
+
+### Runnig
+```bash
+python main.py
+```
+
+### Tests
+
+```bash
+python -m unittest -v .\tests\adapter_test.py
 ```
 
 
