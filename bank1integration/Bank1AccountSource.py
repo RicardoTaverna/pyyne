@@ -21,8 +21,7 @@ class Bank1AccountSource():
         """
         return 215.5
     
-    @staticmethod
-    def getAccountCurrency(accountId: int) -> str:
+    def getAccountCurrency(self, accountId: int) -> str:
         """Return the account currency.
 
         Args:
@@ -33,8 +32,7 @@ class Bank1AccountSource():
         """
         return "USD"
 
-    @staticmethod
-    def getTransactions(accountId: int, fromDate: date, toDate: date) -> List:
+    def getTransactions(self, accountId: int, fromDate: date, toDate: date) -> List:
         """Return the account transactions.
 
         Args:
@@ -46,8 +44,9 @@ class Bank1AccountSource():
             List: list of transactions
         """
         arrList = []
-        arrList.append(100.0, Bank1Transaction.TYPE_CREDIT, "Check deposit")
-        arrList.append(25.5, Bank1Transaction.TYPE_DEBIT, "Debit card purchase")
-        arrList.append(225.0, Bank1Transaction.TYPE_DEBIT, "Rent payment")
+        
+        arrList.append(Bank1Transaction(100.0, Bank1Transaction.TYPE_CREDIT, "Check deposit"))
+        arrList.append(Bank1Transaction(25.5, Bank1Transaction.TYPE_DEBIT, "Debit card purchase"))
+        arrList.append(Bank1Transaction(225.0, Bank1Transaction.TYPE_DEBIT, "Rent payment"))
 
         return arrList
