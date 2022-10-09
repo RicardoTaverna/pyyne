@@ -19,3 +19,6 @@ class Bank2BalanceAdapter():
             float: the account balance
         """
         return self.bank2.getBalance(accountNum=accountId).getBalance()
+
+    def getAccountCurrency(self, accountId: int) -> str:
+        return self.bank2.getBalance(accountNum=accountId).getCurrency()
