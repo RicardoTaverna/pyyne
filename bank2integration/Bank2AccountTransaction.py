@@ -12,12 +12,12 @@ class TRANSACTION_TYPES(Enum):
 class Bank2AccountTransaction():
     """Class to create a transaction."""
 
-    def __init__(self, amount: float, type: TRANSACTION_TYPES, text: str) -> None:
+    def __init__(self, amount: float, type: str, text: str) -> None:
         """Class constructor.
 
         Args:
             amount (float): transaction quantity
-            type (TRANSACTION_TYPES): transaction type
+            type (str): transaction type
             text (str): transaction description
         """
         self.amount = amount
@@ -32,7 +32,7 @@ class Bank2AccountTransaction():
         """
         return self.amount
     
-    def getType(self) -> TRANSACTION_TYPES:
+    def getType(self) -> str:
         """Return the type of the transaction.
 
         Returns:

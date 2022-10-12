@@ -6,7 +6,6 @@ from bank2integration.Bank2AccountSource import Bank2AccountSource
 from pyynechallengebank.BankAdapter import Bank2BalanceAdapter
 
 
-
 class BankController():
     """Controller that pulls information form multiple bank integrations and prints them to the console."""
 
@@ -18,7 +17,6 @@ class BankController():
         for idx, account in enumerate(accounts):
             print(f"Bank{idx+1} - {account.getAccountBalance(accountId)} {account.getAccountCurrency(accountId)}")
         print("----------------------------------------------")
-
 
     def printTransactions(self):
         """Implement me to pull transactions from all available bank integrations and display them, one after the other."""
@@ -38,7 +36,6 @@ class BankController():
                 print(f"{bank.getAmount()} {currency} - {gettype} - {bank.getText()}")
             print("----------------------------------------------")
 
-    
     def __getType(self, bank_type: Any):
         """Return the type Credit or Debit."""
         if bank_type == 1:

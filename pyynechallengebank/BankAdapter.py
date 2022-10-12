@@ -4,6 +4,7 @@ from datetime import date
 from bank1integration.Bank1AccountSource import Bank1AccountSource
 from bank2integration.Bank2AccountSource import Bank2AccountSource
 
+
 class Bank2BalanceAdapter():
     """Adapter for bank2 to get the account balance with the same method as the bank 1."""
 
@@ -35,4 +36,3 @@ class Bank2BalanceAdapter():
 
     def getTransactions(self, accountId: int, fromDate: date, toDate: date):
         return self.bank2.getTransactions(accountId, fromDate, toDate)
-

@@ -41,21 +41,47 @@
 ## 🚀 Project
 
 ### Requirements
+- Start creating a new python environment after clone the project, inside the main folder:
+```bash
+pip install virtualenv
+
+python -m virtualenv .venv
+```
+
 - Install the adicional libraries
 ```bash
 pip install -r requirements.txt
 ```
 
 ### Runnig
+- To run the project, You can use the python command or the bash script:
 ```bash
 python main.py
 ```
 
-### Tests
-
 ```bash
+bash run.sh
+```
+
+### Tests
+- To run the tests You can use either the python command or the bash script:
+```bash
+# to check the docstyles
+python -m pydocstyle main.py
+
+# to check code quality
+python -m pycodestyle --config=.pycodestyle  main.py
+python -m pycodestyle --config=.pycodestyle  pyynechallengebank
+python -m mypy main.py
+
+# to run the tests
 python -m unittest -v .\tests\adapter_test.py
 ```
+
+```bash
+bash run-tests.sh
+```
+
 
 
 ## 📝 licence
