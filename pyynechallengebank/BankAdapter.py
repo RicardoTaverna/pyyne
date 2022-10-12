@@ -6,12 +6,12 @@ from bank1integration.Bank1AccountSource import Bank1AccountSource
 from bank2integration.Bank2AccountSource import Bank2AccountSource
 
 
-class Bank1Adapter():
-    """Adapter for bank1 to get the account balance withou access bank1 original methods."""
+class BankAdapter():
+    """Adapter for bank2 and bank1 to get the account details without access originals methods."""
 
-    def __init__(self) -> None:
+    def __init__(self, bank) -> None:
         """Class constructor."""
-        self.bank1 = Bank1AccountSource()
+        self.bank = bank
 
     def getAccountBalance(self, accountId: int) -> float:
         """Balance method adapted.
@@ -22,7 +22,9 @@ class Bank1Adapter():
         Returns:
             float: the account balance
         """
-        return self.bank1.getAccountBalance(accountId)
+        if isinstance(self.bank, Bank2AccountSource):
+            return self.bank.getBalance(accountNum=accountId).getBalance()
+        return self.bank.getAccountBalance(accountId)
 
     def getAccountCurrency(self, accountId: int) -> str:
         """Balance method adapted.
@@ -33,37 +35,9 @@ class Bank1Adapter():
         Returns:
             str: currency
         """
-        return self.bank1.getAccountCurrency(accountId)
-
-
-class Bank2Adapter():
-    """Adapter for bank2 to get the account balance with the same method as the bank 1."""
-
-    def __init__(self) -> None:
-        """Class constructor."""
-        self.bank2 = Bank2AccountSource()
-
-    def getAccountBalance(self, accountId: int) -> float:
-        """Balance method adapted.
-
-        Args:
-            accountId (int): the account id
-
-        Returns:
-            float: the account balance
-        """
-        return self.bank2.getBalance(accountNum=accountId).getBalance()
-
-    def getAccountCurrency(self, accountId: int) -> str:
-        """Balance method adapted.
-
-        Args:
-            accountId (int): the account id
-
-        Returns:
-            str: currency
-        """
-        return self.bank2.getBalance(accountNum=accountId).getCurrency()
+        if isinstance(self.bank, Bank2AccountSource):
+            return self.bank.getBalance(accountNum=accountId).getCurrency()
+        return self.bank.getAccountCurrency(accountId)
 
     def getTransactions(self, accountId: int, fromDate: date, toDate: date):
         """Transaction method adapted.
@@ -73,4 +47,4 @@ class Bank2Adapter():
             fromDate (date): from date
             toDate (date): to date
         """
-        return self.bank2.getTransactions(accountId, fromDate, toDate)
+        return self.bank.getTransactions(accountId, fromDate, toDate)
