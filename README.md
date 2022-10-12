@@ -22,6 +22,10 @@
   <img alt="Repository Issues" src="https://img.shields.io/github/issues/RicardoTaverna/pyyne?color=%2353872F&style=for-the-badge">
 </p>
 
+<p>
+  <a href="https://wakatime.com/badge/user/18404a95-9303-4021-afd5-7b42235d38a0/project/e6b2b9a4-1e9a-4827-9d32-b0ab8246fee8"><img src="https://wakatime.com/badge/user/18404a95-9303-4021-afd5-7b42235d38a0/project/e6b2b9a4-1e9a-4827-9d32-b0ab8246fee8.svg" alt="wakatime"></a>
+</p>
+
 ## 💻 Table of Contents
 
 * [About](#about)
