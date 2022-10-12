@@ -6,6 +6,36 @@ from bank1integration.Bank1AccountSource import Bank1AccountSource
 from bank2integration.Bank2AccountSource import Bank2AccountSource
 
 
+class Bank1Adapter():
+    """Adapter for bank1 to get the account balance withou access bank1 original methods."""
+
+    def __init__(self) -> None:
+        """Class constructor."""
+        self.bank1 = Bank1AccountSource()
+
+    def getAccountBalance(self, accountId: int) -> float:
+        """Balance method adapted.
+
+        Args:
+            accountId (int): the account id
+
+        Returns:
+            float: the account balance
+        """
+        return self.bank1.getAccountBalance(accountId)
+
+    def getAccountCurrency(self, accountId: int) -> str:
+        """Balance method adapted.
+
+        Args:
+            accountId (int): the account id
+
+        Returns:
+            str: currency
+        """
+        return self.bank1.getAccountCurrency(accountId)
+
+
 class Bank2Adapter():
     """Adapter for bank2 to get the account balance with the same method as the bank 1."""
 
