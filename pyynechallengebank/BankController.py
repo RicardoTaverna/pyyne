@@ -2,8 +2,7 @@
 
 from typing import Any
 from bank1integration.Bank1AccountSource import Bank1AccountSource
-from bank2integration.Bank2AccountSource import Bank2AccountSource
-from pyynechallengebank.BankAdapter import Bank2BalanceAdapter
+from pyynechallengebank.BankAdapter import Bank2Adapter
 
 
 class BankController():
@@ -13,7 +12,7 @@ class BankController():
         """Implement me to pull balance information from all available bank integrations and display them, one after the other."""
         print("============== ACCOUNT BALANCES ==============")
         accountId = 123
-        accounts = [Bank1AccountSource(), Bank2BalanceAdapter()]
+        accounts = [Bank1AccountSource(), Bank2Adapter()]
         for idx, account in enumerate(accounts):
             print(f"Bank{idx+1} - {account.getAccountBalance(accountId)} {account.getAccountCurrency(accountId)}")
         print("----------------------------------------------")
@@ -24,7 +23,7 @@ class BankController():
         fromDate = "2022-01-12"
         toDate = "2022-02-12"
 
-        bankList = [Bank1AccountSource(), Bank2BalanceAdapter()]
+        bankList = [Bank1AccountSource(), Bank2Adapter()]
         print("============ ACCOUNT TRANSACTIONS ============")
         for idx, banks in enumerate(bankList):
             print(f"------------------- bank {idx+1} -------------------")
