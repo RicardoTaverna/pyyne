@@ -24,6 +24,9 @@
 
 <p>
   <a href="https://wakatime.com/badge/user/18404a95-9303-4021-afd5-7b42235d38a0/project/e6b2b9a4-1e9a-4827-9d32-b0ab8246fee8"><img src="https://wakatime.com/badge/user/18404a95-9303-4021-afd5-7b42235d38a0/project/e6b2b9a4-1e9a-4827-9d32-b0ab8246fee8.svg" alt="wakatime"></a>
+  <p>
+    <a href="https://wakatime.com/@ricardotaverna/projects/pkvpxcakdl?start=2022-10-06&end=2022-10-12" target="_blank">Time spent on project</a>
+  </p>
 </p>
 
 ## 💻 Table of Contents
