@@ -2,7 +2,23 @@
 
 import unittest
 from bank2integration.Bank2AccountTransaction import Bank2AccountTransaction
-from pyynechallengebank.BankAdapter import Bank2Adapter
+from pyynechallengebank.BankAdapter import Bank1Adapter, Bank2Adapter
+
+
+class TestBank1adapter(unittest.TestCase):
+    """Class for testing bank1 adapter."""
+
+    def test_balance_bank1(self):
+        """Test if bank1 adapter still bring the same value as the original method."""
+        accountId = 123
+        account = Bank1Adapter()
+        self.assertEqual(account.getAccountBalance(accountId), 215.5)
+
+    def test_currency_bank1(self):
+        """Test if bank1 adapter still bring the same value as the original method."""
+        accountId = 123
+        account = Bank1Adapter()
+        self.assertEqual(account.getAccountCurrency(accountId), "USD")
 
 
 class TestBank2Adapter(unittest.TestCase):
